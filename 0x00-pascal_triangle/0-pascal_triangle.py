@@ -9,14 +9,14 @@ def pascal_triangle(n):
     Returns:
       List of lists of intgs rep the Pascal’s tri.
     '''
-    trianglelist = []
+    trilist = []
     if n == 0:
-        return trianglelist
+        return trilist
     for integr in range(n):
-        trianglelist.append([])
-        trianglelist[integr].append(1)
+        trilist.append([])
+        trilist[integr].append(1)
         if (integr > 0):
             for r in range(1, integr):
-                trianglelist[integr].append(trianglelist[integr - 1][r - 1] + trianglelist[integr - 1][r])
-            trianglelist[integr].append(1)
-    return trianglelist
+                trilist[integr].append(trilist[integr - 1][r - 1] + trilist[integr - 1][r])
+            trilist[integr].append(1)
+    return trilist
