@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' returns a list of lists of integers'''
+''' returns a list of lists of integers '''
 
 def pascal_triangle(n):
     '''
@@ -7,16 +7,16 @@ def pascal_triangle(n):
     Argumentss:
       n (interger): no of rows of the triangle
     Returns:
-      List of lists of intgs rep the Pascal’s tri.
+      List of lists of intgs rep the Pascal’s tri
     '''
-    trilist = []
+    tril = []
     if n == 0:
-        return trilist
-    for integr in range(n):
-        trilist.append([])
-        trilist[integr].append(1)
-        if (integr > 0):
-            for r in range(1, integr):
-                trilist[integr].append(trilist[integr - 1][r - 1] + trilist[integr - 1][r])
-            trilist[integr].append(1)
-    return trilist
+        return tril
+    for intgr in range(n):
+        tril.append([])
+        tril[intgr].append(1)
+        if (intgr > 0):
+            for r in range(1, intgr):
+                tril[intgr].append(tril[intgr - 1][r - 1] + tril[intgr - 1][r])
+            tril[intgr].append(1)
+    return tril
