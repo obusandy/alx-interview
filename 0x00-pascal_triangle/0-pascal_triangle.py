@@ -11,7 +11,7 @@ def pascal_triangle(n):
     '''
     trianglelist = []
     if n == 0:
-        return lists
+        return trianglelist
     for integr in range(n):
         trianglelist.append([])
         trianglelist[integr].append(1)
