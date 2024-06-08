@@ -2,10 +2,9 @@
 """Module to determine if all boxes can be unlocked"""
 
 def canUnlockAll(boxes):
-    """
-     Determines if all boxes
-     can be unlocked.
-     Each box contains keys to other boxes.
+    """Determines if all boxes
+    can be unlocked.
+    Each box contains keys to other boxes.
     """
     unlocked_boxes = [0]
     for boxIndex, box in enumerate(boxes):
@@ -20,9 +19,8 @@ def canUnlockAll(boxes):
 
 
 def canUnlockAll2(boxes):
-    """
-     Determines if all boxes can be unlocked.
-     Each box contains keys to other boxes.
+    """Determines if all boxes can be unlocked.
+    Each box contains keys to other boxes.
     Returns:
         bool: True if all boxes can be unlocked
     """
