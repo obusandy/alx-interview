@@ -12,7 +12,7 @@ def canUnlockAll(boxes):
         if not box:
             continue
         for key in box:
-            if key < len(boxes) and key not in unlocked and key != boxIndex:
+            if key < len(boxes) and key not in unlocked_boxes and key != boxIndex:
                 unlocked_boxes.append(key)
     if len(unlocked_boxes) == len(boxes):
         return True
@@ -28,7 +28,7 @@ def canUnlockAll2(boxes):
     """
     unlocked_boxes = set()
     for boxIndex, box in enumerate(boxes):
-        if len(box) == 0 or boxID == 0:
+        if len(box) == 0 or boxIndex == 0:
             unlocked_boxes.add(boxIndex)
         for key in box:
             if key < len(boxes) and key != boxIndex:
