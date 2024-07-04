@@ -26,7 +26,7 @@ def n_queens():
         print("N must be at least 4")
         exit(1)
 
-    chessbd = [[0 for col in range(sizen)] for row in range(sizen)]
+    chessbd = [[0 for colmn in range(sizen)] for row in range(sizen)]
     solvenqueens(chessbd, 0, sizen)
 
 
