@@ -47,7 +47,7 @@ def solvenqueens(chessbd, col, sizen):
             chessbd[k][col] = 1
             respns = solvenqueens(chessbd, col + 1, sizen) or respns
             chessbd[k][col] = 0
-    return respns
+        return respns
 
 
 def is_safe(chessbd, row, col, sizen):
