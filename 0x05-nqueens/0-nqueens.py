@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-Below is a program to solve the N queens problem
-Prints all possible solutions
-N must be an int greater or equal to 4.
+A program to solve the N queens problem.
+N must be an integer greater or equal to 4
+Usage: nqueens N
 """
 
 import sys
@@ -10,7 +10,7 @@ import sys
 
 def nqueens():
     """
-    Main function to handle input
+    below is the Main function of n queens
     """
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
@@ -26,62 +26,59 @@ def nqueens():
         print("N must be at least 4")
         exit(1)
 
-    chessbd = [[0 for col in range(sizen)] for row in range(sizen)]
-    solvenqueens(chessbd, 0, sizen)
+    board = [[0 for colmn in range(sizen)] for row in range(sizen)]
+    solvepositn(board, 0, sizen)
 
 
-def solvenqueens(chessbd, col, sizen):
+def solvepositn(board, colmn, sizen):
     """
-    solves the N queens problem
-    user called the program with the wrong number of args,
-    print Usage: nqueens N
-
+    solves the N queens problem by placing queens on the board
+    solves the nqueen
     """
-    if col == sizen:
-        print_board(chessbd)
+    if colmn == sizen:
+        print_board(board)
         return True
 
     respns = False
-    for k in range(sizen):
-        if is_safe(chessbd, k, col, sizen):
-            chessbd[k][col] = 1
-            respns = solvenqueens(chessbd, col + 1, sizen) or respns
-            chessbd[k][col] = 0
-        return respns
+    for i in range(sizen):
+        if is_safe(board, i, colmn, sizen):
+            board[i][colmn] = 1
+            respns = solvepositn(board, colmn + 1, sizen) or respns
+            board[i][colmn] = 0
+    return respns
 
 
-def is_safe(chessbd, row, col, sizen):
+def is_safe(board, row, colmn, sizen):
     """
-    Checks if a queen can be placed at the given position on the chessboard
+    Checks if a queen can be placed at the given pos on the board
     without being attacked.
     """
-    for k in range(col):
-        if chessbd[row][k] == 1:
+    for i in range(colmn):
+        if board[row][i] == 1:
             return False
 
-    for k, l in zip(range(row, -1, -1), range(col, -1, -1)):
-        if chessbd[k][l] == 1:
+    for i, j in zip(range(row, -1, -1), range(colmn, -1, -1)):
+        if board[i][j] == 1:
             return False
 
-    for k, l in zip(range(row, sizen, 1), range(col, -1, -1)):
-        if chessbd[k][l] == 1:
+    for i, j in zip(range(row, sizen, 1), range(colmn, -1, -1)):
+        if board[i][j] == 1:
             return False
 
     return True
 
 
-def print_board(chessbd):
+def print_board(board):
     """
     Prints the board with queens' positions
-    prints them in the required format
-    print every possible solution to the problem
+    prints in the the required format
     """
-    queenspos = []
-    for k in range(len(chessbd)):
-        for l in range(len(chessbd)):
-            if chessbd[k][l] == 1:
-                queenspos.append([k, l])
-    print(queenspos)
+    queenspot = []
+    for i in range(len(board)):
+        for j in range(len(board)):
+            if board[i][j] == 1:
+                queenspot.append([i, j])
+    print(queenspot)
 
 
 if __name__ == "__main__":
