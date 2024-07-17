@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-an n x n 2D matrix, rotate it 90 degrees clockwise
+an n x n 2D matrix, rotate it 90dgr
 The matrix must be edited in-place.
-Returns: None: The function modifies the matrix in place.
+Returns: None
+The function modifies the matrix in place.
 """
 
 def rotate_2d_matrix(matrix):
@@ -11,10 +12,10 @@ def rotate_2d_matrix(matrix):
     Args:
         matrix: The 2D matrix to be rotated.
     """
-    tmprary = []
-    for indx in matrix:
-        tmprary.append(indx.copy())
-    new = len(matrix)
-    for indx in range(new):
-        for n in range(new):
-            matrix[n][indx] = tmprary[new - indx - 1][n]
+    nw = len(matrix)
+    # Create a cpy
+    tmpr = [r.copy() for r in matrix]
+    # Rotate
+    for i in range(nw):
+        for j in range(nw):
+            matrix[j][i] = tmpr[nw - i - 1][j]
