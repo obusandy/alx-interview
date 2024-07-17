@@ -11,11 +11,10 @@ def rotate_2d_matrix(matrix):
     Args:
         matrix: The 2D matrix to be rotated.
     """
-    for indx in range(int(len(matrix) / 2)):
-        for i in range(indx, (len(matrix) - indx - 1)):
-            trix = (len(matrix) - 1 - i)
-            tmprary = matrix[indx][i]
-            matrix[indx][i] = matrix[trix][indx]
-            matrix[trix][indx] = matrix[(len(matrix) - indx - 1)][trix]
-            matrix[(len(matrix) - indx - 1)][trix] = matrix[i][(len(matrix) - indx - 1)]
-            matrix[i][(len(matrix) - indx - 1)] = tmprary
+    tmprary = []
+    for indx in matrix:
+        tmprary.append(indx.copy())
+    new = len(matrix)
+    for indx in range(new):
+        for n in range(new):
+            matrix[n][indx] = tmprary[new - indx - 1][n]
