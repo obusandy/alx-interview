@@ -23,12 +23,12 @@ def makeChange(coins, total):
 
     indx, noofcoins = (0, 0)
     cp_ttl = total
-    len_c = len(noofcoins)
+    len_c = len(coins)
 
     while(indx < len_c and cp_ttl > 0):
         if (cp_ttl - coins[indx]) >= 0:
             cp_ttl -= coins[indx]
-            ncoins += 1
+            noofcoins += 1
         else:
             indx += 1
 
