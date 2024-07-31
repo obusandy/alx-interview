@@ -15,15 +15,15 @@ def island_perimeter(grid):
     """
     ttl_perimeter = 0
     grid_hgt = len(grid)
-    for rw_indx in range(grid_hgt):
-        for colmn in range(len(grid[rw_indx])):
-            if grid[rw_indx][colmn] == 1:
-                if rw_indx - 1 < 0 or grid[rw_indx - 1][colmn] == 0:
+    for rw in range(grid_hgt):
+        for colmn in range(len(grid[rw])):
+            if grid[rw][colmn] == 1:
+                if rw - 1 < 0 or grid[rw - 1][colmn] == 0:
                     ttl_perimeter += 1
-                if colmn - 1 < 0 or grid[rw_indx][colmn - 1] == 0:
+                if colmn - 1 < 0 or grid[rw][colmn - 1] == 0:
                     ttl_perimeter += 1
-                if colmn + 1 >= len(grid[rw_indx]) or grid[rw_indx][colmn + 1] == 0:
+                if colmn + 1 >= len(grid[rw]) or grid[rw][colmn + 1] == 0:
                     ttl_perimeter += 1
-                if rw_indx + 1 >= grid_hgt or grid[rw_indx + 1][colmn] == 0:
+                if rw + 1 >= grid_hgt or grid[rw + 1][colmn] == 0:
                     ttl_perimeter += 1
     return ttl_perimeter
