@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Prime game module """
 
+
 def isWinner(x, nums):
     """
     Function that determines the
@@ -25,8 +26,8 @@ def isWinner(x, nums):
             primeInt += 1
         figrs_filtr[intg] = primeInt
     maria_Wns = 0
-    for i in nums:
-        maria_Wns += figrs_filtr[i] % 2 == 1
+    for x in nums:
+        maria_Wns += figrs_filtr[x] % 2 == 1
     if maria_Wns * 2 == len(nums):
         return None
     if maria_Wns * 2 > len(nums):
